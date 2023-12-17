@@ -3,7 +3,7 @@ from math import ceil
 from colorama import Fore, Style
 from cameraCapture import capture
 
-capture()#takes photo with webcam, otherwise remove this function and just use an image named image.png
+capture()#takes photo with webcam, otherwise remove this function and just change image source in the next line
 
 with Image.open("image.png") as im:    
     im = im.transpose(Image.ROTATE_270)#image is flipped by default? or i'm doing somn wrong
