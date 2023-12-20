@@ -17,10 +17,8 @@ print(width," ", height)
 brightMatrix = [[0 for j in range(height)] for i in range(width)]
 for i in range(width):#stores the averaged rgb value of the pixel and normalizes it to a scale of 90
     for j in range(height):
-        sum = 0
-        for rgb in px[i, j]:
-            sum+=rgb
-        brightMatrix[i][j] = sum//3
+        sum = 0.21 *px[i,j][0] + 0.72 *px[i,j][1] + 0.07*px[i,j][2]
+        brightMatrix[i][j] = sum//3        
         normalized = (brightMatrix[i][j]-0)/255
         normalized *= 90
         brightMatrix[i][j] = ceil(normalized)        
